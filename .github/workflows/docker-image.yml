@@ -20,5 +20,5 @@ jobs:
     
     - name: Push
       run: |
-        docker tag ${{ github.repository }}:latest afielologisele/tezosfullnode:latest
-        docker push afielologisele/tezosfullnode:latest
+        docker tag ${{ github.repository }}:latest afielologisele/tezosfullnode
+        docker push afielologisele/tezosfullnode
