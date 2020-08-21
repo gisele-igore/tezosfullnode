@@ -15,7 +15,7 @@ RUN dpkg -i ./bubblewrap_0.2.1-1_amd64.deb
 #    ./carthagenet.sh start
 
 RUN git clone https://gitlab.com/tezos/tezos.git && \
-    cd tezo
+    cd tezos
 RUN git checkout last-release
 
 RUN sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
