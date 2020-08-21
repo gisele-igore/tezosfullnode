@@ -15,4 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tezosfullnode:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ github.repository }}
+      #tezosfullnode:$(date +%s)
+    
+    - name: Push
+      run: |
+        docker tag ${{ github.repository }}:latest afielologisele/tezosfullnode:latest
+        docker push afielologisele/tezosfullnode:latest
