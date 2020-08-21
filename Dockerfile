@@ -16,7 +16,7 @@ RUN dpkg -i ./bubblewrap_0.2.1-1_amd64.deb
 
 RUN git clone https://gitlab.com/tezos/tezos.git && \
     cd tezos
-RUN git checkout last-release
+RUN git checkout latest-release
 
 RUN sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
 RUN mv opam-* /usr/local/bin/opam
