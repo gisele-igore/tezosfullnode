@@ -10,13 +10,13 @@ RUN apt-get install -y wget libcap2
 RUN wget http://security.ubuntu.com/ubuntu/pool/universe/b/bubblewrap/bubblewrap_0.2.1-1_amd64.deb
 RUN dpkg -i ./bubblewrap_0.2.1-1_amd64.deb
 
-#RUN wget -O carthagenet.sh https://gitlab.com/tezos/tezos/raw/latest-release/scripts/tezos-docker-manager.sh
-#RUN chmod +x carthagenet.sh && \
-#    ./carthagenet.sh start
+RUN wget -O carthagenet.sh https://gitlab.com/tezos/tezos/raw/latest-release/scripts/tezos-docker-manager.sh
+RUN chmod +x carthagenet.sh && \
+    ./carthagenet.sh start
 
-RUN git clone https://gitlab.com/tezos/tezos.git && \
-    cd tezos
-RUN git checkout latest-release
+#RUN git clone https://gitlab.com/tezos/tezos.git && \
+#    cd tezos
+#RUN git checkout latest-release
 
 RUN sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
 RUN mv opam-* /usr/local/bin/opam
