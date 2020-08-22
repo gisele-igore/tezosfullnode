@@ -25,6 +25,7 @@ RUN opam init
 RUN opam update && \
     eval $(opam env) 
 
+WORKDIR tezos
 RUN make build-deps && \
     make
     
