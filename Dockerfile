@@ -16,8 +16,7 @@ RUN dpkg -i ./bubblewrap_0.2.1-1_amd64.deb
 
 RUN git clone https://gitlab.com/tezos/tezos.git && \
     cd tezos
-RUN git checkout carthagenet && \
-    git rev-parse HEAD
+RUN git checkout carthagenet
 
 RUN sudo add-apt-repository ppa:avsm/ppa
 RUN sudo apt update && \
