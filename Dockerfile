@@ -19,7 +19,7 @@ RUN git clone https://gitlab.com/tezos/tezos.git && \
 #RUN git checkout latest-release
 #RUN git checkout master
 
-RUN apt install opam -y
+RUN apt install opam -v 2.0.0 -y
 RUN opam init 
 #RUN opam init --bare && \
 RUN opam update && \
