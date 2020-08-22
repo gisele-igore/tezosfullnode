@@ -18,9 +18,11 @@ RUN git clone https://gitlab.com/tezos/tezos.git && \
     cd tezos
 #RUN git checkout latest-release
 #RUN git checkout master
-
-RUN wget https://github.com/ocaml/opam/releases/download/2.0.0/opam-2.0.0-x86_64-linux 
-RUN opam init 
+RUN opam init eval 'opam config env'
+RUN opam pin add opam-devel --dev
+RUN cp $pwd/.opam/system/lib/opam-devel/* /usr/local/bin && \
+    source .profile
+#RUN opam init --disable-sandboxing -y
 #RUN opam init --bare && \
 RUN opam update && \
     eval $(opam env) 
