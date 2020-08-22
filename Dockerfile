@@ -19,13 +19,9 @@ RUN git clone https://gitlab.com/tezos/tezos.git && \
 #RUN git checkout latest-release
 #RUN git checkout master
 
-RUN sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
-RUN apt update && \
-    apt install opam
-RUN mv opam-* /usr/local/bin/opam
-RUN opam init && \
+RUN apt install opam
+RUN opam init 
 #RUN opam init --bare && \
-    chmod a+x /usr/local/bin/opam 
 RUN opam update && \
     eval $(opam env) 
 
