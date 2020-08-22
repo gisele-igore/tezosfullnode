@@ -16,11 +16,12 @@ RUN dpkg -i ./bubblewrap_0.2.1-1_amd64.deb
 
 RUN git clone https://gitlab.com/tezos/tezos.git && \
     cd tezos
+RUN git checkout latest-release
 #RUN git checkout master
 
-RUN sudo add-apt-repository ppa:avsm/ppa
-RUN sudo apt update && \
-    sudo apt install opam
+RUN add-apt-repository ppa:avsm/ppa
+RUN apt update && \
+    apt install opam
 RUN mv opam-* /usr/local/bin/opam
 RUN opam init && \
 #RUN opam init --bare && \
